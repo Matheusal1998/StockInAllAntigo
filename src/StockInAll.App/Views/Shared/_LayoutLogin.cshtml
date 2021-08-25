@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StockInAll.App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/MaterialAdmin/vendor/fontawesome-free/css/all.css" rel="stylesheet" />
+    <link href="~/MaterialAdmin/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+</head>
+
+<body id="bg-gradient-primary">
+
+    @RenderBody()
+
+<!-- Bootstrap core JavaScript-->
+    <script src="~/MaterialAdmin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/MaterialAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/MaterialAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/MaterialAdmin/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/MaterialAdmin/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/MaterialAdmin/js/demo/chart-area-demo.js"></script>
+    <script src="~/MaterialAdmin/js/demo/chart-pie-demo.js"></script>
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+

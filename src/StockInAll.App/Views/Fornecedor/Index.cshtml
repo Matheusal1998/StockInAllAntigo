@@ -1,0 +1,107 @@
+﻿@model IEnumerable<StockInAll.App.ViewModels.FornecedorViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ramo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCriacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ramo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCriacao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <div class="conteiner" style="display: none">
+
+        <h1>Busca por voz</h1>
+
+        <div class="search">
+
+            <button id="speakbt">Buscar</button>
+
+            <div id="resultSpeak">Retorno</div>
+
+        </div>
+
+    </div>
+</table>
+
+@section Scripts {
+
+
+    <script src="~/js/busca.js"></script>
+    <script>
+        inicializa();
+
+         function PreencherCampo(mensagem) {
+
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Buscar","PreencherCampos")',
+                    data: { "mensagem": mensagem },
+                    success: function (result) {
+
+                        if(result.sucesso.prediction.topIntent == "CreateItem"){
+                           window.location.href = "@Url.Action("Create")";
+                        }
+                        
+
+
+                    },
+                    error: function (result) {
+                        console.log("erro");
+                    }
+
+                });
+        }
+
+        function inicializa() {
+            document.addEventListener('keydown', pegaTecla);
+        }
+
+        function pegaTecla() {
+
+            var tecla = event.keyCode;
+            if (tecla == 17) {
+                $('#speakbt').click();
+            }
+        }
+    </script>
+}
