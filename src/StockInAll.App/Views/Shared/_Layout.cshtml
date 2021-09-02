@@ -23,7 +23,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-controller="Home" asp-action="Index" style="margin: 15px 0 15px 0">
@@ -31,7 +31,6 @@
             </a>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            
             @*<li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">*@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin"
@@ -47,12 +46,12 @@
 
                 </div>
             </li>
-            
-     
 
 
 
-            <li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">
+
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -68,7 +67,7 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -86,9 +85,9 @@
                 </div>
             </li>
 
-        
+
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -108,7 +107,7 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">
+            <li class="nav-item">
                 <a class="nav-link" asp-action="Charts" asp-controller="Home">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span>
@@ -116,7 +115,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">
+            @*<li class="nav-item" disable-by-claim-name="Administrador" disable-by-claim-value="Total">*@
+            <li class="nav-item">
                 <a class="nav-link" asp-action="Tables" asp-controller="Home">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span>
@@ -128,7 +128,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-         
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -328,7 +328,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" asp-area="Identity"  asp-page="/Account/Manage/Index">
+                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -339,7 +339,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     Logout
-                                   
+
                                 </a>
                             </div>
                         </li>
@@ -351,9 +351,9 @@
                 <!-- Begin Page Content -->
 
 
-
-                @RenderBody()
-
+                <div class="container">
+                    @RenderBody()
+                </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -398,6 +398,19 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="conteiner" hidden>
+
+        <h1>Busca por voz</h1>
+
+        <div class="search">
+
+            <button id="speakbt">Buscar</button>
+
+            <div id="resultSpeak">Retorno</div>
+
+        </div>
+
     </div>
 
     <!-- Bootstrap core JavaScript-->

@@ -9,7 +9,7 @@ using StockInAll.App.ViewModels;
 
 namespace StockInAll.App.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class FornecedorController : Controller
     {
         private readonly ILogger<FornecedorController> _logger;

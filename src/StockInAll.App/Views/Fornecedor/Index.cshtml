@@ -1,70 +1,71 @@
 ﻿@model IEnumerable<StockInAll.App.ViewModels.FornecedorViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista Fornecedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container-fluid">
+    <h1>@ViewData["Title"]</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ramo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataCriacao)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ramo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataCriacao)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-
-    <div class="conteiner" style="display: none">
-
-        <h1>Busca por voz</h1>
-
-        <div class="search">
-
-            <button id="speakbt">Buscar</button>
-
-            <div id="resultSpeak">Retorno</div>
-
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a asp-action="Create" class="btn btn-primary">Criar novo fornecedor</a>
         </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ramo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DataCriacao)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ramo)
+                                </td>
+                                <td>
+                                    @item.DataCriacao.ToShortDateString()
+                                </td>
+                                <td class="text-right">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-circle"><i class="fa fa-pen"></i></a> 
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-circle "><i class="fa fa-search"></i></a> 
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary btn-circle"><i class="fa fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
 
+                </table>
+            </div>
+        </div>
     </div>
-</table>
+
+
+</div>
 
 @section Scripts {
 
+    <!-- Page level plugins -->
+    <script src="~/MaterialAdmin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/MaterialAdmin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+    <!-- Page level custom scripts -->
+    <script src="~/MaterialAdmin/js/demo/datatables-demo.js"></script>
     <script src="~/js/busca.js"></script>
     <script>
         inicializa();
@@ -81,7 +82,7 @@
                         if(result.sucesso.prediction.topIntent == "CreateItem"){
                            window.location.href = "@Url.Action("Create")";
                         }
-                        
+
 
 
                     },

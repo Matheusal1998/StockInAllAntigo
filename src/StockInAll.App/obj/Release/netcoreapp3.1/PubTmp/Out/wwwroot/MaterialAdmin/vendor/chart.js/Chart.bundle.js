@@ -3503,7 +3503,7 @@ var core_animations = {
 		var me = this;
 		if (me.request === null) {
 			// Skip animation frame requests until the active one is executed.
-			// This can happen when processing mouse events, e.g. 'mousemove'
+			// This can StockInAll when processing mouse events, e.g. 'mousemove'
 			// and 'mouseout' events will trigger multiple renders.
 			me.request = helpers$1.requestAnimFrame.call(window, function() {
 				me.request = null;
@@ -3811,7 +3811,7 @@ helpers$1.extend(DatasetController.prototype, {
 		// the internal meta data accordingly.
 		if (me._data !== data) {
 			if (me._data) {
-				// This case happens when the user replaced the data array instance.
+				// This case StockInAlls when the user replaced the data array instance.
 				unlistenArrayEvents(me._data, me);
 			}
 
@@ -7443,7 +7443,7 @@ var EVENT_TYPES = {
 /**
  * The "used" size is the final value of a dimension property after all calculations have
  * been performed. This method uses the computed style of `element` but returns undefined
- * if the computed style is not expressed in pixels. That can happen in some cases where
+ * if the computed style is not expressed in pixels. That can StockInAll in some cases where
  * `element` has a size relative to its parent and this last one is not yet displayed,
  * for example because of `display: none` on a parent node.
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
@@ -7669,7 +7669,7 @@ function addResizeListener(node, listener, chart) {
 				// effectively making chart smaller and the scrollbar hidden again.
 				// Because we are inside `throttled`, and currently `ticking`, scroll
 				// events are ignored during this whole 2 resize process.
-				// If we assumed wrong and something else happened, we are resizing
+				// If we assumed wrong and something else StockInAlled, we are resizing
 				// twice in a frame (potential performance issue)
 				listener(createEvent('resize', chart));
 			}
@@ -12810,7 +12810,7 @@ var scale_linearbase = core_scale.extend({
 		if (setMin !== setMax) {
 			// We set the min or the max but not both.
 			// So ensure that our range is good
-			// Inverted or 0 length range can happen when
+			// Inverted or 0 length range can StockInAll when
 			// ticks.min is set, and no datasets are visible
 			if (me.min >= me.max) {
 				if (setMin) {
@@ -17202,7 +17202,7 @@ var moment = createCommonjsModule(function (module, exports) {
             }
             return hour;
         } else {
-            // this is not supposed to happen
+            // this is not supposed to StockInAll
             return hour;
         }
     }

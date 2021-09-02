@@ -1027,7 +1027,7 @@
       }
 
       if (!activeElement || !nextElement) {
-        // Some weirdness is happening, so we bail
+        // Some weirdness is StockInAlling, so we bail
         return;
       }
 
@@ -2842,7 +2842,7 @@
 
     // now, let's make a step back and look at this code closely (wtf?)
     // If the content of the popper grows once it's been positioned, it
-    // may happen that the popper gets misplaced because of the new content
+    // may StockInAll that the popper gets misplaced because of the new content
     // overflowing its reference element
     // To avoid this problem, we provide two options (x and y), which allow
     // the consumer to define the offset origin.
