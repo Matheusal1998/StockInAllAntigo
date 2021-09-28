@@ -491,3 +491,4 @@ C:\Users\Samsung\Desktop\StockInAll\src\StockInAll.App\bin\Debug\netcoreapp3.1\R
 C:\Users\Samsung\Desktop\StockInAll\src\StockInAll.App\obj\Debug\netcoreapp3.1\StockInAll.App.csproj.CoreCompileInputs.cache
 C:\Users\Samsung\Desktop\StockInAll\src\StockInAll.App\obj\Debug\netcoreapp3.1\StockInAll.App.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Samsung\Desktop\StockInAll\src\StockInAll.App\obj\Debug\netcoreapp3.1\StockInAll.App.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Samsung\Desktop\StockInAll\src\StockInAll.App\obj\Debug\netcoreapp3.1\Razor\Views\Venda\Index.cshtml.g.cs

@@ -9461,7 +9461,8 @@
   },
   "packageFolders": {
     "C:\\Users\\Samsung\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -9473,7 +9474,8 @@
       "outputPath": "C:\\Users\\Samsung\\Desktop\\StockInAll\\src\\StockInAll.App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\Samsung\\AppData\\Roaming\\NuGet\\NuGet.Config",
